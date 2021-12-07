@@ -15,7 +15,7 @@ Add to the first line of your `main` function:
 
 ```go
 func main() {
-    flags.Parse()
+    flag.Parse()
 
     // ...
 }

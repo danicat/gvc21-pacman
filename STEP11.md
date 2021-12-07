@@ -132,7 +132,12 @@ Now let's remove all input handling code from `main` and just call the `Update` 
 
 ```go
 func main() {
-	m, err := loadMaze("maze.txt")
+	err := loadConfig(*configFile)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	m, err := loadMaze(*mazeFile)
 	if err != nil {
 		log.Fatal(err)
 	}
