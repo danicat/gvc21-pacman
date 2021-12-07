@@ -82,6 +82,8 @@ func draw(cls bool) {
                 fmt.Print(simpleansi.WithBlueBackground(cfg.Wall))
             case '.':
                 fmt.Print(cfg.Dot)
+			case 'X':
+				fmt.Print(cfg.Pill)
             default:
                 fmt.Print(cfg.Space)
             }
@@ -130,6 +132,7 @@ func processCollisions() bool {
 		numDots--
 		score++
 		remove(player.row, player.col)
+
     case 'X':
         score += 10
         remove(player.row, player.col)

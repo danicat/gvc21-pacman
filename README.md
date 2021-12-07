@@ -4,6 +4,10 @@ Welcome to the Govircon 2021 beginner's workshop!
 
 In this course you will learn the basics of the Go programming language while building a Pac Man clone from scratch.
 
+## Workshop Slide Deck
+
+[click here](https://docs.google.com/presentation/d/e/2PACX-1vSioIiG-CE0HrWJme3dNmWdTD8hUM2NB8kGDB5kuPXvxhGnssC1cR8uK9UDcdLIALhN95Qw-raOLPmR/pub?start=false&loop=false&delayms=3000)
+
 ## Before getting started
 
 Make sure you have the latest version of Go installed on your machine. You can download it from https://golang.org.
