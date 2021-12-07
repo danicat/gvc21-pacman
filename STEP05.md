@@ -116,6 +116,34 @@ func readInput() (string, error) {
 }
 ```
 
+Update the draw function:
+
+```go
+func draw(cls bool) {
+	if cls {
+		simpleansi.ClearScreen()
+	}
+
+	for _, line := range maze {
+		for _, chr := range line {
+			switch chr {
+			case '#':
+				fmt.Print("#")
+			default:
+				fmt.Print(" ")
+			}
+		}
+		fmt.Println()
+	}
+
+	simpleansi.MoveCursor(player.row, player.col)
+	fmt.Print("P")
+
+	simpleansi.MoveCursor(len(maze)+1, 0)
+}
+```
+
+
 ## Updating the player's position
 
 Finally: add `player.Move` to the game loop:
