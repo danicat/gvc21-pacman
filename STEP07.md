@@ -17,9 +17,9 @@ for row, line := range maze {
     for col, char := range line {
         switch char {
         case 'P':
-            player = sprite{row, col}
+            player = Sprite{row, col}
         case 'G':
-            ghosts = append(ghosts, &sprite{row, col})
+            ghosts = append(ghosts, &Sprite{row, col})
         case '.':
             numDots++
         }

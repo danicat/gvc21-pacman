@@ -11,13 +11,38 @@ func readInput() (string, error) {
         return "", err
     }
 
-    if cnt == 1 && buffer[0] == 0x1b {
+    if cnt == 1 && buffer[0] == 0x1b { // ESC
         return "QUIT", nil
     }
 
     return "", nil
 }
 ```
+
+Update the draw function:
+
+```go
+func draw(cls bool) {
+	if cls {
+		simpleansi.ClearScreen()
+	}
+
+	for _, line := range maze {
+		for _, chr := range line {
+			switch chr {
+			case '#':
+				fmt.Print("#")
+			default:
+				fmt.Print(" ")
+			}
+		}
+		fmt.Println()
+	}
+
+	simpleansi.MoveCursor(len(maze)+1, 0)
+}
+```
+
 
 ```go
 func main() {
