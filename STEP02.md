@@ -3,7 +3,7 @@
 ## Reading from a file
 
 ```go
-func loadMaze(file string) []string, error {
+func loadMaze(file string) ([]string, error) {
     f, err := os.Open(file)
     if err != nil {
         return nil, err

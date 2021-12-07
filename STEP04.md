@@ -28,7 +28,7 @@ func main() {
 	maze = m
 
 	for {
-		draw()
+		draw(true)
 		input, err := readInput()
 		if err != nil {
 			fmt.Printf("game loop: %v", err)
@@ -57,9 +57,7 @@ func prepareTerminal() {
 		log.Fatalf("unable to activate cbreak mode: %v", err)
 	}
 }
-```
 
-```go
 func restoreTerminal() {
 	cookedTerm := exec.Command("stty", "-cbreak", "echo")
 	cookedTerm.Stdin = os.Stdin
@@ -85,7 +83,7 @@ func main() {
 	defer restoreTerminal()
 
 	for {
-		draw()
+		draw(true)
 		input, err := readInput()
 		if err != nil {
 			fmt.Printf("game loop: %v", err)
